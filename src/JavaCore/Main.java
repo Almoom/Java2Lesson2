@@ -15,7 +15,8 @@ public class Main {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                sum += (int)arr[i][j];
+                if (!arr[i][j].toString().matches("[^0-9]")) sum += (int)arr[i][j];
+                else throw new MyArrayDataException(i, j);
             }
         }
         System.out.println(sum);
